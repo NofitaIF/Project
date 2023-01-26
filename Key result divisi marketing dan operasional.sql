@@ -10,8 +10,7 @@ limit 3
 
 
 /*Membuat query untuk divisi operasional.
-menampilkan apakah rata-rata waktu pemrosesan selama 3 bulan terakhir sesuai target.
-Dari pesanan dibuat sampai pesanan dikirim adalah 12 jam.*/
+menampilkan apakah rata-rata waktu pemrosesan selama 3 bulan terakhir sesuai target. Dari pesanan dibuat sampai pesanan dikirim adalah 12 jam.*/
 
 select date_part('year',created_at) tahun,date_part('month',created_at) bulan, date_trunc('hour',(avg(shipped_at - created_at))) rata_rata_waktu_pengiriman
 from order_items
